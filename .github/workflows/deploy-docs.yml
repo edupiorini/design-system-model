@@ -21,6 +21,11 @@ jobs:
 
       - run: npm run build
 
+      - name: Set Git user and email
+        run: |
+          git config user.name "Eduardo Piorini"
+          git config user.email "eduardopiorini@hotmail.com"
+
       - name: Deploy storybook
         working-directory: ./packages/docs
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
