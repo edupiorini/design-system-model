@@ -28,6 +28,8 @@ jobs:
 
       - name: Deploy storybook
         working-directory: ./packages/docs
-        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static --git-user "Eduardo Piorini" --git-email "eduardopiorini@hotmail.com"
         env:
+          GIT_AUTHOR_NAME: "Eduardo Piorini"
+          GIT_AUTHOR_EMAIL: "eduardopiorini@hotmail.com"
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static --git-user "Eduardo Piorini" --git-email "eduardopiorini@hotmail.com"
